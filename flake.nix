@@ -7,24 +7,24 @@
       follows = "chaotic/home-manager";
     };
     icedos-apps-0 = {
-      url = "github:icedos/apps/9951c752a4a7b00e4d5ff9005fa3653ce6754770";
+      url = "github:icedos/apps/720d0016bb41b0d2460b2dd2ebfc1c1de4040ad0";
     };
-    icedos-apps-zen-zen = {
+    icedos-apps-aagl-aagl = {
       inputs = {
         nixpkgs = {
           follows = "nixpkgs";
         };
       };
-      url = "github:0xc000022070/zen-browser-flake";
+      url = "github:ezKEa/aagl-gtk-on-nix";
     };
     icedos-desktop-0 = {
       url = "github:icedos/desktop/8e76025d2bf063518366c7a764c41bb2b135dde6";
     };
-    icedos-hardware-0 = {
-      url = "github:icedos/hardware/8d054566e52efcf8f2ec0f6c59cc9e76e104f53e";
+    icedos-gnome-0 = {
+      url = "github:icedos/gnome/9a908d425c6db87665c90ef472a2858fc31167b3";
     };
-    icedos-hyprland-0 = {
-      url = "github:icedos/hyprland/9cf7fdff29d725832148040610da21363fe8c1c9";
+    icedos-hardware-0 = {
+      url = "github:icedos/hardware/2acfe7af53b16e883c7553df086e49d9fe13264d";
     };
     icedos-providers-0 = {
       url = "github:icedos/providers/1273fe1a4086fbe2a84436ca1acb350a0020a410";
@@ -93,7 +93,7 @@
             {
               options.icedos.configurationLocation = mkOption {
                 type = types.str;
-                default = "/home/icedborn/.code/icedos/core";
+                default = "/home/stef/code/os/os-config";
               };
             }
           )
@@ -150,40 +150,36 @@
                 "nvme"
                 "xhci_pci"
                 "ahci"
-                "usb_storage"
                 "usbhid"
+                "usb_storage"
                 "sd_mod"
               ];
               boot.initrd.kernelModules = [ ];
               boot.kernelModules = [ "kvm-amd" ];
               boot.extraModulePackages = [ ];
-              boot.initrd.luks.devices."luks-8e034466-adc7-4f83-81cd-4ceb2397eb2d".device =
-                "/dev/disk/by-uuid/8e034466-adc7-4f83-81cd-4ceb2397eb2d";
 
               fileSystems."/" = {
-                device = "/dev/disk/by-uuid/e2a8d4bf-b1fc-446f-b347-c3671eda1ccb";
+                device = "/dev/disk/by-uuid/875ba1fd-ae85-47ec-beac-ec515e776834";
                 fsType = "btrfs";
                 options = [ "subvol=@" ];
               };
 
-              boot.initrd.luks.devices."luks-ab2a2fb9-08aa-4c27-ab62-a1581a0113ff".device =
-                "/dev/disk/by-uuid/ab2a2fb9-08aa-4c27-ab62-a1581a0113ff";
+              boot.initrd.luks.devices."luks-a42d4af1-e764-4d91-acb2-ac735d979a64".device =
+                "/dev/disk/by-uuid/a42d4af1-e764-4d91-acb2-ac735d979a64";
 
               fileSystems."/boot" = {
-                device = "/dev/disk/by-uuid/1456-AC74";
+                device = "/dev/disk/by-uuid/080E-B189";
                 fsType = "vfat";
               };
 
-              swapDevices = [
-                { device = "/dev/disk/by-uuid/a642dc73-75f4-425f-8cc9-cbef30039563"; }
-              ];
+              swapDevices = [ ];
 
               # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
               # (the default) this is the recommended approach. When using systemd-networkd it's
               # still possible to use this option, but it's recommended to use it in conjunction
               # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
               networking.useDHCP = lib.mkDefault true;
-              # networking.interfaces.enp9s0.useDHCP = lib.mkDefault true;
+              # networking.interfaces.enp4s0.useDHCP = lib.mkDefault true;
 
               nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
               hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
