@@ -1,37 +1,35 @@
 [[icedos.repositories]]
 url = "github:icedos/apps"
 modules = [
+  "aagl",
+  "android-tools",
   "bash",
   "btop",
   "celluloid",
+  "codium",
+  "container-manager",
   "direnv",
   "faugus-launcher",
   "gamemode",
   "gamescope",
   "git",
-  "input-remapper",
   "kitty",
   "lact",
+  "librewolf",
   "lsfg-vk",
   "mangohud",
   "nautilus",
   "ncdu",
-  "network-manager",
   "nh",
-  "nix",
   "nix-health",
+  "nix",
   "nixfmt",
-  "obs",
   "proton-launch",
-  "sd-inhibitor",
   "solaar",
   "ssh",
   "steam",
-  "sunshine",
   "toolset",
   "wg-quick",
-  "zed",
-  "zen",
   "zenergy",
   "zenstates",
   "zsh",
@@ -48,11 +46,11 @@ modules = [
   "disable-ipv6",
   "graphics",
   "kernel",
-  "mesa-unstable",
   "monitors",
   "mounts",
   "pipewire",
   "radeon",
+  "ryzen",
   "systemd-boot",
   "uinput",
   "upower",
@@ -61,7 +59,8 @@ modules = [
 ]
 
 [[icedos.repositories]]
-url = "github:icedos/hyprland"
+name = "gnome"
+url = "github:icedos/gnome"
 
 [[icedos.repositories]]
 url = "github:icedos/tweaks"
@@ -75,86 +74,134 @@ url = "github:icedos/providers"
 modules = ["chaotic"]
 
 [icedos.applications]
-defaultBrowser = "zen.desktop"
-defaultEditor = "dev.zed.Zed.desktop"
+defaultBrowser = "librewolf.desktop"
+defaultEditor = "codium.desktop"
 extraPackages = [
-  "appimage-run",
-  "blanket",
-  "faugus-launcher",
-  "fragments",
-  "gimp3",
-  "harmony-music",
-  "newsflash",
+  # "audacity", # Sound editor with graphical UI
+  # "bun", # Incredibly fast JavaScript runtime, bundler, transpiler and package manager
+  "curtail", # Image compressor
+  "discord-canary", # Bleeding edge version of Discord
+  "eartag", # Simple music tag editor
+  "gimp3", # GNU Image Manipulation Program
+  "gsound", # Small library for playing system sounds (required to show file properties in Nautilus)
+  "handbrake", # Tool for converting video files and ripping DVDs
+  "jetbrains.webstorm", # Professional IDE for Web and JavaScript development
+  "mission-center",
+  "mousai", # Song recognizer
+  # "nextcloud-client", # Nextcloud themed desktop client
+  "nodejs_20", # Node package manager
+  "owmods-gui", # Outer Wilds Mod Manager
+  "parabolic", # Download web video and audio
+  "pnpm", # Fast, disk space efficient package manager for JavaScript
   "signal-desktop",
-  "umu-launcher",
-  "warp",
+  "spotify", # Music streaming service
+  "sticky-notes", # Simple sticky notes app
+  "ungoogled-chromium", # Chromium with dependencies on Google web services removed
+  "warp", # File sync
 ]
 insecurePackages = []
 
-[icedos.applications.git.users.icedborn]
-username = "IceDBorn"
-email = "git.outsider841@simplelogin.fr"
+[icedos.applications.codium.users.stef]
+autoSave = "onFocusChange"
+formatOnPaste = false
+
+[icedos.applications.codium.users.work]
+autoSave = "onFocusChange"
+formatOnPaste = false
+
+[icedos.applications.git.users.stef]
+username = "CrazyStevenz"
+email = "github.ekta@aleeas.com"
+
+[icedos.applications.git.users.work]
+username = "CrazyStevenz"
+email = "github.ekta@aleeas.com"
 
 [icedos.applications.mangohud]
-fpsLimit = "144,60,0"
+fpsLimit = "165,60,0"
 
-[icedos.applications.network-manager]
-applet = true
-
-[icedos.applications.sd-inhibitor.users.icedborn.watchers.pipewire]
-inputsToIgnore = ["Noise Canceling source", "Peak detect", "cava"]
-outputsToIgnore = ["Discord", "Element"]
+[icedos.applications.nh.gc]
+days = 7 # Number of days before a generation can be deleted
+generations = 5 # Number of generations that will always be kept
 
 [icedos.applications.steam]
 beta = true
 downloadsWorkaround = true
 
 [icedos.applications.wg-quick]
-interfaces = ["protonvpn"]
-
-[[icedos.applications.zen.profiles]]
-default = true
-exec = "default"
-privacy = true
-
-[[icedos.applications.zen.profiles]]
-exec = "zen-social"
-name = "Zen Social"
-privacy = true
-pwa = true
-sites = [
-  "https://mail.proton.me",
-  "https://lumo.proton.me",
-  "https://develop.element.io",
-  "https://discord.com/app",
-]
+interfaces = ["desktop-ro-69"]
 
 [icedos.applications.zenstates]
-serviceArgs = "-p 0 -v 3C -f A0"
+serviceArgs = "-p 0 -v 40 -f B0" # Pstate 0, 1.15 voltage, 4400 clock speed
 
 [icedos.desktop]
-autologinUser = "icedborn"
+autologinUser = "stef"
 
-[icedos.desktop.hyprland.settings]
-startupScript = """
-nautilus -w &
-nautilus -w &
-signal-desktop &
-steam &
-zeditor &
-zen-beta --no-remote -P default --name zen-startup &
-zen-social &
-"""
-windowRules = [
-  "workspace 1 silent, class:^(zen-startup)$",
-  "workspace 2 silent, class:^(dev.zed.Zed)$",
-  "workspace 11 silent, class:^(signal|zen-social)$",
-  "workspace 12 silent, class:^(Steam|steam)$, title:^((?!notificationtoasts.*).)*$",
-  "workspace 12 silent, title:^(.*Steam[A-Za-z0-9\\s]*)$",
-  "workspace 13 silent, class:^(org\\.gnome\\.Nautilus)$",
+[icedos.desktop.gnome]
+titlebarLayout = "appmenu:minimize,maximize,close"
+
+[icedos.desktop.gnome.extensions]
+arcmenu = true
+dashToPanel = true
+
+[icedos.desktop.gnome.users.stef]
+startupScript = "steam & signal-desktop"
+
+[icedos.desktop.gnome.users.stef.pinnedApps.arcmenu]
+enable = true
+list = ["codium.desktop", "org.nicotine_plus.Nicotine.desktop", "spek.desktop"]
+
+[icedos.desktop.gnome.users.stef.pinnedApps.shell]
+enable = true
+list = [
+  "steam.desktop",
+  "discord-canary.desktop",
+  "signal.desktop",
+  "librewolf.desktop",
 ]
 
-[icedos.desktop.users.icedborn]
+[icedos.desktop.gnome.users.work]
+startupScript = "discordcanary & slack"
+
+[icedos.desktop.gnome.users.work.pinnedApps.arcmenu]
+enable = true
+list = ["codium.desktop"]
+
+[icedos.desktop.gnome.users.work.pinnedApps.shell]
+enable = true
+list = [
+  "slack.desktop",
+  "discord-canary.desktop",
+  "signal.desktop",
+  "librewolf.desktop",
+  "webstorm.desktop",
+]
+
+[icedos.desktop.gnome.clock]
+date = true
+weekday = true
+
+[icedos.desktop.users.stef]
+
+[icedos.desktop.users.stef.idle.lock]
+enable = false
+
+[icedos.desktop.users.stef.idle.disableMonitors]
+seconds = 300
+
+[icedos.desktop.users.stef.idle.suspend]
+seconds = 900
+
+[icedos.desktop.users.work]
+
+[icedos.desktop.users.work.idle.lock]
+seconds = 300
+
+[icedos.desktop.users.work.idle.disableMonitors]
+seconds = 270
+
+[icedos.desktop.users.work.idle.suspend]
+enable = false
 
 [icedos.hardware.bootloaders.systemd-boot]
 mountPoint = "/boot"
@@ -164,44 +211,82 @@ version = "cachyos"
 
 [[icedos.hardware.mounts]]
 path = "/"
-device = "/dev/disk/by-uuid/e2a8d4bf-b1fc-446f-b347-c3671eda1ccb"
+device = "/dev/disk/by-uuid/875ba1fd-ae85-47ec-beac-ec515e776834"
 fsType = "btrfs"
 flags = ["compress=zstd", "nofail", "x-gvfs-show"]
 
 [[icedos.hardware.mounts]]
-path = "/mnt/games"
-device = "/dev/disk/by-uuid/040329ae-685d-4ba6-8bdd-e0a9785f9672"
+path = "/mnt/Nvme"
+device = "/dev/disk/by-uuid/ebcec57e-2afb-49a7-8ae8-d6776a841f52"
 fsType = "btrfs"
 flags = ["compress=zstd", "nofail", "x-gvfs-show"]
 
 [[icedos.hardware.mounts]]
-path = "/mnt/games2"
-device = "/dev/disk/by-uuid/60876d91-f863-45db-88c5-4c707879588f"
+path = "/mnt/SSDGames"
+device = "/dev/disk/by-uuid/bb93c901-8df3-4e23-8029-b1816a66ef58"
 fsType = "btrfs"
 flags = ["compress=zstd", "nofail", "x-gvfs-show"]
 
 [[icedos.hardware.mounts]]
-path = "/mnt/storage"
-device = "/dev/disk/by-uuid/89730200-942d-4a5c-893f-0196c87435d2"
+path = "/mnt/HDDGames"
+device = "/dev/disk/by-uuid/e7e03cc8-e8fe-47e2-b48a-c6dbd1903112"
 fsType = "btrfs"
 flags = ["compress=zstd", "nofail", "x-gvfs-show"]
 
-[[icedos.hardware.monitors]]
-name = "DP-2"
-resolution = "3440x1440"
-refreshRate = 144
-position = "0x0"
-rotation = 0
+# [[icedos.hardware.mounts]]
+# path = "/mnt/Windows"
+# device = "/dev/disk/by-uuid/3032AC4732AC13BE"
+# fsType = "ntfs"
+# flags = ["nofail", "x-gvfs-show"]
 
 [[icedos.hardware.monitors]]
 name = "DP-1"
+resolution = "3440x1440"
+refreshRate = 164.90
+position = "0x0"
+
+[[icedos.hardware.monitors]]
+name = "DP-2"
 resolution = "1920x1080"
-refreshRate = 144
-position = "3440x200"
-rotation = 0
+refreshRate = 60
+position = "3440x360"
 
 [icedos.system]
 version = "23.05"
 
-[icedos.users.icedborn]
-description = "IceDBorn"
+[icedos.users.stef]
+description = "Stefanos"
+extraPackages = [
+  # "cemu", # Wiuu
+  # "duckstation", # PS1
+  # "heroic", # Cross-platform Epic Games Launcher
+  # "pcsx2", # PS2
+  # "ppsspp", # PSP
+  # "prismlauncher", # Minecraft launcher
+  # "rpcs3", # PS3
+
+  "appimage-run", # Appimage runner
+  "bottles", # Wine manager
+  "faugus-launcher",
+  "flac", # Library and tools for encoding and decoding the FLAC lossless audio file format
+  "fragments", # BitTorrent client
+  # "ghex", # HEX Editor
+  "newsflash", # RSS reader
+  "nicotine-plus", # p2p music sharing platform
+  # "protontricks", # Winetricks for proton prefixes
+  # "protonup-qt", # Install and manage Proton-GE and Luxtorpeda for Steam and Wine-GE
+  "spek", # Audio file spectrogram analysis
+  "stremio", # Media streaming platform
+  # "wine", # Compatibility layer capable of running Windows applications
+  # "winetricks", # Wine prefix settings manager
+]
+
+[icedos.users.work]
+description = "Work"
+extraPackages = [
+  # "beekeeper-studio", # SQL client
+  "code-cursor", # AI-powered code editor built on vscode
+  "slack", # Desktop client for Slack
+  "watchman", # Watches files and takes action when they change
+  "windsurf", # Agentic IDE powered by AI Flow paradigm
+]
