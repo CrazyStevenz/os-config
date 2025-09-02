@@ -134,9 +134,6 @@ interfaces = ["desktop-ro-69"]
 [icedos.applications.zenstates]
 serviceArgs = "-p 0 -v 40 -f B0" # Pstate 0, 1.15 voltage, 4400 clock speed
 
-[icedos.desktop]
-autologinUser = "stef"
-
 [icedos.desktop.gnome]
 titlebarLayout = "appmenu:minimize,maximize,close"
 
