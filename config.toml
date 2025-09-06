@@ -7,7 +7,6 @@ modules = [
   "btop",
   "celluloid",
   "codium",
-  "container-manager",
   "direnv",
   "faugus-launcher",
   "gamemode",
@@ -24,6 +23,7 @@ modules = [
   "nix-health",
   "nix",
   "nixfmt",
+  "podman",
   "proton-launch",
   "solaar",
   "ssh",
@@ -273,7 +273,7 @@ extraPackages = [
   # "protontricks", # Winetricks for proton prefixes
   # "protonup-qt", # Install and manage Proton-GE and Luxtorpeda for Steam and Wine-GE
   "spek", # Audio file spectrogram analysis
-  "stremio", # Media streaming platform
+  # "stremio", # Media streaming platform
   # "wine", # Compatibility layer capable of running Windows applications
   # "winetricks", # Wine prefix settings manager
 ]
