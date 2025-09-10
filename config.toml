@@ -54,7 +54,6 @@ modules = [
   "systemd-boot",
   "uinput",
   "upower",
-  "xpadneo",
   "zram",
 ]
 
