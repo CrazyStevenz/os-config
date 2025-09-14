@@ -97,17 +97,17 @@
     },
     "icedos-github:icedos/apps": {
       "locked": {
-        "lastModified": 1757530915,
-        "narHash": "sha256-vIDLc8Ga7AXs/MjYBYwlD7kTDQVQPJQ62U0N44ZBCoo=",
+        "lastModified": 1757617173,
+        "narHash": "sha256-Ygv1qhu7VCX1L/q9Oc5a+81XN2PbIGd78NwLzOTtMvw=",
         "owner": "icedos",
         "repo": "apps",
-        "rev": "4cce693bce28339f61e959150ee07fe5b7b7499a",
+        "rev": "d4225139265095646cb9b33cfa368ae0879c318c",
         "type": "github"
       },
       "original": {
         "owner": "icedos",
         "repo": "apps",
-        "rev": "4cce693bce28339f61e959150ee07fe5b7b7499a",
+        "rev": "d4225139265095646cb9b33cfa368ae0879c318c",
         "type": "github"
       }
     },
