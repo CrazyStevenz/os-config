@@ -7,7 +7,7 @@
       follows = "chaotic/home-manager";
     };
     icedos-apps-0 = {
-      url = "github:icedos/apps/4cce693bce28339f61e959150ee07fe5b7b7499a";
+      url = "github:icedos/apps/d4225139265095646cb9b33cfa368ae0879c318c";
     };
     icedos-apps-aagl-aagl = {
       inputs = {

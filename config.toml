@@ -9,7 +9,7 @@ modules = [
   "celluloid",
   "codium",
   "direnv",
-  "faugus-launcher",
+  # "faugus-launcher",
   "gamemode",
   "gamescope",
   "git",
@@ -84,7 +84,7 @@ defaultEditor = "codium.desktop"
 extraPackages = [
   # "audacity", # Sound editor with graphical UI
   # "bun", # Incredibly fast JavaScript runtime, bundler, transpiler and package manager
-  "curtail", # Image compressor
+  # "curtail", # Image compressor
   "discord-canary", # Bleeding edge version of Discord
   "eartag", # Simple music tag editor
   "gimp3", # GNU Image Manipulation Program
@@ -95,11 +95,11 @@ extraPackages = [
   "mousai", # Song recognizer
   # "nextcloud-client", # Nextcloud themed desktop client
   "nodejs_20", # Node package manager
-  "owmods-gui", # Outer Wilds Mod Manager
+  # "owmods-gui", # Outer Wilds Mod Manager
   "parabolic", # Download web video and audio
-  "pnpm", # Fast, disk space efficient package manager for JavaScript
+  # "pnpm", # Fast, disk space efficient package manager for JavaScript
   "signal-desktop",
-  "spotify", # Music streaming service
+  # "spotify", # Music streaming service
   "sticky-notes", # Simple sticky notes app
   "ungoogled-chromium", # Chromium with dependencies on Google web services removed
   "warp", # File sync
@@ -269,7 +269,6 @@ extraPackages = [
 
   "appimage-run", # Appimage runner
   "bottles", # Wine manager
-  "faugus-launcher",
   "flac", # Library and tools for encoding and decoding the FLAC lossless audio file format
   "fragments", # BitTorrent client
   # "ghex", # HEX Editor
@@ -287,7 +286,7 @@ extraPackages = [
 description = "Work"
 extraPackages = [
   # "beekeeper-studio", # SQL client
-  "code-cursor", # AI-powered code editor built on vscode
+  # "code-cursor", # AI-powered code editor built on vscode
   "slack", # Desktop client for Slack
   "watchman", # Watches files and takes action when they change
   "windsurf", # Agentic IDE powered by AI Flow paradigm
