@@ -7,7 +7,7 @@
       follows = "chaotic/home-manager";
     };
     icedos-apps-0 = {
-      url = "github:icedos/apps/8e5256f8088fd70a608cd113a22900eb486b38b7";
+      url = "github:icedos/apps/db4b9e049b821709fb234b09abfcc25366d9f8fa";
     };
     icedos-apps-aagl-aagl = {
       inputs = {
@@ -24,7 +24,7 @@
       url = "github:icedos/gnome/9a908d425c6db87665c90ef472a2858fc31167b3";
     };
     icedos-hardware-0 = {
-      url = "github:icedos/hardware/613fb486fe2223e8c11c91cbeedb38514c6e90cf";
+      url = "github:icedos/hardware/adadadabb78a0206aa709e0f1755fd2e89cb3f45";
     };
     icedos-providers-0 = {
       url = "github:icedos/providers/1273fe1a4086fbe2a84436ca1acb350a0020a410";
