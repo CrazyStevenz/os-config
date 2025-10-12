@@ -6,8 +6,13 @@
     home-manager = {
       follows = "chaotic/home-manager";
     };
+<<<<<<< HEAD
     "icedos-github:icedos/apps" = {
       url = "github:icedos/apps/372abf9c09f356ebf19e16ffb19734cccb4255bd";
+=======
+    icedos-apps-0 = {
+      url = "github:icedos/apps/2410562ca0e593c732776fcd4728161fa6737cdf";
+>>>>>>> 4b1a071 (Update flake.lock)
     };
     "icedos-github:icedos/apps-zen-zen" = {
       inputs = {
