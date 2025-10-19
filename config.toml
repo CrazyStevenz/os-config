@@ -76,15 +76,15 @@ modules = ["chaotic"]
 defaultBrowser = "librewolf.desktop"
 defaultEditor = "codium.desktop"
 extraPackages = [
-  "discord-canary", # Bleeding edge version of Discord
+  "discord",
   "gimp3", # GNU Image Manipulation Program
   "gsound", # Small library for playing system sounds (required to show file properties in Nautilus)
   "handbrake", # Tool for converting video files and ripping DVDs
   "jetbrains.webstorm", # Professional IDE for Web and JavaScript development
-  "mission-center",
+  "mission-center", # CPU, Memory, Disk, Network and GPU usage monitor
   "mousai", # Song recognizer
   "nodejs_20", # Node package manager
-  # "pnpm", # Fast, disk space efficient package manager for JavaScript
+  "pnpm", # Fast, disk space efficient package manager for JavaScript
   "signal-desktop",
   "ungoogled-chromium", # Chromium with dependencies on Google web services removed
   "warp", # File sync
@@ -142,13 +142,13 @@ list = ["codium.desktop", "org.nicotine_plus.Nicotine.desktop", "spek.desktop"]
 enable = true
 list = [
   "steam.desktop",
-  "discord-canary.desktop",
+  "discord.desktop",
   "signal.desktop",
   "librewolf.desktop",
 ]
 
 [icedos.desktop.gnome.users.work]
-startupScript = "discordcanary & slack"
+startupScript = "discord & slack"
 
 [icedos.desktop.gnome.users.work.pinnedApps.arcmenu]
 enable = true
@@ -158,7 +158,7 @@ list = ["codium.desktop"]
 enable = true
 list = [
   "slack.desktop",
-  "discord-canary.desktop",
+  "discord.desktop",
   "signal.desktop",
   "librewolf.desktop",
   "webstorm.desktop",
