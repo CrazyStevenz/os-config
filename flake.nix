@@ -7,7 +7,7 @@
       follows = "chaotic/home-manager";
     };
     icedos-apps-0 = {
-      url = "github:icedos/apps/2410562ca0e593c732776fcd4728161fa6737cdf";
+      url = "github:icedos/apps/5fb2d830d8dc7d88bded0939d5214e8d9d7b935e";
     };
     icedos-apps-aagl-aagl = {
       inputs = {
@@ -18,13 +18,13 @@
       url = "github:ezKEa/aagl-gtk-on-nix";
     };
     icedos-desktop-0 = {
-      url = "github:icedos/desktop/c9a6669a249eddc9cbf019d493b382033561dbed";
+      url = "github:icedos/desktop/d26f0fdbb23bf7fb81ffd0a57b44649588034e6b";
     };
     icedos-gnome-0 = {
-      url = "github:icedos/gnome/9a908d425c6db87665c90ef472a2858fc31167b3";
+      url = "github:icedos/gnome/16a6fc3084ea50e611bcef13a01a885fbb19016d";
     };
     icedos-hardware-0 = {
-      url = "github:icedos/hardware/adadadabb78a0206aa709e0f1755fd2e89cb3f45";
+      url = "github:icedos/hardware/cd03974bfac4213f4ea84a1ec5b72bd283af9ea8";
     };
     icedos-providers-0 = {
       url = "github:icedos/providers/1273fe1a4086fbe2a84436ca1acb350a0020a410";
@@ -78,7 +78,7 @@
         program = toString (with pkgs; writeShellScript "icedos-flake-init" "exit");
       };
 
-      nixosConfigurations."icedos" = nixpkgs.lib.nixosSystem rec {
+      nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem rec {
         specialArgs = {
           inherit icedosLib inputs;
         };
