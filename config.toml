@@ -85,6 +85,7 @@ extraPackages = [
   "mousai", # Song recognizer
   "nodejs_20", # Node package manager
   "pnpm", # Fast, disk space efficient package manager for JavaScript
+  "protonvpn-gui",
   "signal-desktop",
   "ungoogled-chromium", # Chromium with dependencies on Google web services removed
   "warp", # File sync
