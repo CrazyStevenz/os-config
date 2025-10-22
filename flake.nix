@@ -12,11 +12,15 @@
 =======
     icedos-apps-0 = {
 <<<<<<< HEAD
+<<<<<<< HEAD
       url = "github:icedos/apps/2410562ca0e593c732776fcd4728161fa6737cdf";
 >>>>>>> 4b1a071 (Update flake.lock)
 =======
       url = "github:icedos/apps/5fb2d830d8dc7d88bded0939d5214e8d9d7b935e";
 >>>>>>> acdd2d4 (Update flake.lock)
+=======
+      url = "github:icedos/apps/670f416671d23736273325968847a4ae65ae6ae2";
+>>>>>>> 3cfbfd7 (Update flake.lock)
     };
     "icedos-github:icedos/apps-zen-zen" = {
       inputs = {
