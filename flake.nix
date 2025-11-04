@@ -14,6 +14,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       url = "github:icedos/apps/2410562ca0e593c732776fcd4728161fa6737cdf";
 >>>>>>> 4b1a071 (Update flake.lock)
 =======
@@ -25,6 +26,9 @@
 =======
       url = "github:icedos/apps/d1b90fb863b9a8751ad495aa31c3c79cd19c6811";
 >>>>>>> d482a2b (Update flake.lock)
+=======
+      url = "github:icedos/apps/96c4507a8b16cb3eb535fe504964e9f69deb3e95";
+>>>>>>> 6c150c3 (Update flake.lock)
     };
     "icedos-github:icedos/apps-zen-zen" = {
       inputs = {
