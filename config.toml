@@ -178,7 +178,7 @@ enable = false
 seconds = 300
 
 [icedos.desktop.users.stef.idle.suspend]
-seconds = 900
+enable = false
 
 [icedos.desktop.users.work]
 
