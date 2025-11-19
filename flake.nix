@@ -6,31 +6,10 @@
     home-manager = {
       follows = "chaotic/home-manager";
     };
-<<<<<<< HEAD
     "icedos-github:icedos/apps" = {
-      url = "github:icedos/apps/372abf9c09f356ebf19e16ffb19734cccb4255bd";
-=======
-    icedos-apps-0 = {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      url = "github:icedos/apps/2410562ca0e593c732776fcd4728161fa6737cdf";
->>>>>>> 4b1a071 (Update flake.lock)
-=======
-      url = "github:icedos/apps/5fb2d830d8dc7d88bded0939d5214e8d9d7b935e";
->>>>>>> acdd2d4 (Update flake.lock)
-=======
-      url = "github:icedos/apps/670f416671d23736273325968847a4ae65ae6ae2";
->>>>>>> 3cfbfd7 (Update flake.lock)
-=======
-      url = "github:icedos/apps/d1b90fb863b9a8751ad495aa31c3c79cd19c6811";
->>>>>>> d482a2b (Update flake.lock)
-=======
-      url = "github:icedos/apps/96c4507a8b16cb3eb535fe504964e9f69deb3e95";
->>>>>>> 6c150c3 (Update flake.lock)
+      url = "github:icedos/apps/200f20d957388108abe8b67d59ecc60a8521d27e";
     };
-    "icedos-github:icedos/apps-zen-zen" = {
+    "icedos-github:icedos/apps-aagl-aagl" = {
       inputs = {
         nixpkgs = {
           follows = "nixpkgs";
@@ -38,25 +17,32 @@
       };
       url = "github:ezKEa/aagl-gtk-on-nix";
     };
-<<<<<<< HEAD
+    "icedos-github:icedos/apps-celluloid-celluloid-shader" = {
+      flake = false;
+      url = "path:///nix/store/5zcj323fgw0vxx0nhgvp45yxrwikm0c6-FSR.glsl";
+    };
+    "icedos-github:icedos/cosmic" = {
+      url = "github:icedos/cosmic/14f3c3ad4b3cba3dac565de38c9b0258c1d8d080";
+    };
+    "icedos-github:icedos/cosmic-default-cosmic-manager" = {
+      inputs = {
+        home-manager = {
+          follows = "home-manager";
+        };
+        nixpkgs = {
+          follows = "nixpkgs";
+        };
+      };
+      url = "github:HeitorAugustoLN/cosmic-manager";
+    };
     "icedos-github:icedos/desktop" = {
-      url = "github:icedos/desktop/c9a6669a249eddc9cbf019d493b382033561dbed";
+      url = "github:icedos/desktop/79ecc3ae5905212e66570ee98b718fe290f9923c";
     };
-    "icedos-github:icedos/hardware" = {
-      url = "github:icedos/hardware/2acfe7af53b16e883c7553df086e49d9fe13264d";
-    };
-    "icedos-github:icedos/hyprland" = {
-      url = "github:icedos/hyprland/9cf7fdff29d725832148040610da21363fe8c1c9";
-=======
-    icedos-desktop-0 = {
-      url = "github:icedos/desktop/d26f0fdbb23bf7fb81ffd0a57b44649588034e6b";
-    };
-    icedos-gnome-0 = {
+    "icedos-github:icedos/gnome" = {
       url = "github:icedos/gnome/16a6fc3084ea50e611bcef13a01a885fbb19016d";
     };
-    icedos-hardware-0 = {
-      url = "github:icedos/hardware/cd03974bfac4213f4ea84a1ec5b72bd283af9ea8";
->>>>>>> acdd2d4 (Update flake.lock)
+    "icedos-github:icedos/hardware" = {
+      url = "github:icedos/hardware/fbedf40b954c3658e5f4f827e9c6e46e9e5261c2";
     };
     "icedos-github:icedos/providers" = {
       url = "github:icedos/providers/1273fe1a4086fbe2a84436ca1acb350a0020a410";
@@ -82,21 +68,22 @@
     }@inputs:
     let
       system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+      inherit (pkgs) lib;
+      inherit (lib) fileContents flatten map;
 
       inherit (builtins) fromTOML;
-      inherit (lib) fileContents flatten map;
-      inherit (pkgs) lib;
-
-      cfg = (fromTOML (fileContents ./config.toml)).icedos;
-      pkgs = nixpkgs.legacyPackages.${system};
+      inherit ((fromTOML (fileContents ./config.toml))) icedos;
 
       icedosLib = import ./lib.nix {
         inherit lib pkgs inputs;
-        config = cfg;
+        config = icedos;
         self = ./.;
       };
 
-      externalModulesOutputs = map icedosLib.getExternalModuleOutputs cfg.repositories;
+      inherit (icedosLib) getExternalModuleOutputs;
+
+      externalModulesOutputs = map getExternalModuleOutputs icedos.repositories;
 
       extraOptions = flatten (map (mod: mod.options) externalModulesOutputs);
 
