@@ -20,10 +20,6 @@ modules = [
   "x11",
 ]
 
-[icedos.desktop.cosmic.appearance]
-gaps = 0
-roundness = "slightly-round"
-
 [icedos.desktop.cosmic.users.stef]
 startupScript = "steam & signal-desktop"
 
@@ -32,6 +28,7 @@ startupScript = "slack"
 
 [icedos.desktop.cosmic.panel]
 autohide = true
+favorites = ["steam", "discord", "signal", "librewolf"]
 position = "Bottom" # Left, Right, Top, Bottom
 size = "S" # XS, S, M, L, XL
 
@@ -39,8 +36,6 @@ size = "S" # XS, S, M, L, XL
 left = ["com.system76.CosmicAppletPower", "com.system76.CosmicAppList"]
 center = []
 right = [
-  "dev.dominiccgeh.CosmicAppletEmojiSelector",
-  "io.github.cosmic_utils.cosmic-ext-applet-clipboard-manager",
   "com.system76.CosmicAppletStatusArea",
   "com.system76.CosmicAppletInputSources",
   "com.system76.CosmicAppletBluetooth",
@@ -51,25 +46,31 @@ right = [
   "com.system76.CosmicAppletTime",
 ]
 
-[icedos.desktop.cosmic.windowManagement.controls]
-activeHint = false
-
-[icedos.desktop.cosmic.windowManagement.focus]
-cursorFollowsFocus = false
-
 [icedos.desktop.cosmic.input.keyboard]
 superKeyAction = "Launcher" # Launcher, WorkspaceOverview, AppLibrary, Disable
 
 [[icedos.desktop.cosmic.input.keyboard.shortcuts]]
 command = "kitty"
 description = "Kitty"
-keys = ["Super+x"]
+keys = ["Super+x", "Super+Greek_xi"]
 variant = "Spawn"
 
 [[icedos.desktop.cosmic.input.keyboard.shortcuts]]
 command = "cosmic-files"
 description = "Files"
-keys = ["Super+e"]
+keys = ["Super+e", "Super+Greek_epsilon"]
+variant = "Spawn"
+
+[[icedos.desktop.cosmic.input.keyboard.shortcuts]]
+command = "walker-clipboard"
+description = "Clipboard Manager"
+keys = ["Super+v", "Super+Greek_omega"]
+variant = "Spawn"
+
+[[icedos.desktop.cosmic.input.keyboard.shortcuts]]
+command = "walker-emojis"
+description = "Emoji Picker"
+keys = ["Super+slash"]
 variant = "Spawn"
 
 [icedos.desktop.cosmic.time]
@@ -78,6 +79,7 @@ weekday = true
 
 [[icedos.repositories]]
 url = "github:icedos/apps"
+# url = "path:/home/stef/code/os/apps"
 modules = [
   "aagl",
   "android-tools",
@@ -108,6 +110,7 @@ modules = [
   "ssh",
   "steam",
   "toolset",
+  "walker",
   "wg-quick",
   "zenergy",
   "zenstates",
@@ -191,7 +194,7 @@ username = "CrazyStevenz"
 email = "github.ekta@aleeas.com"
 
 [icedos.applications.mangohud]
-fpsLimit = "165,60,0"
+fpsLimit = "165,144,120,90,60,30,0"
 
 [icedos.applications.nh.gc]
 days = 7 # Number of days before a generation can be deleted
@@ -277,7 +280,7 @@ enable = false
 mountPoint = "/boot"
 
 [icedos.hardware.kernel]
-version = "cachyos-rc"
+version = "latest"
 
 [[icedos.hardware.mounts]]
 path = "/"
@@ -322,6 +325,7 @@ refreshRate = 60
 position = "3440x360"
 
 [icedos.system]
+generations = 30
 version = "23.05"
 
 [icedos.users.stef]
@@ -348,19 +352,14 @@ extraPackages = [
   "nicotine-plus", # p2p music sharing platform
   # "owmods-gui", # Outer Wilds Mod Manager
   "parabolic", # Download web video and audio
-  # "protontricks", # Winetricks for proton prefixes
-  # "protonup-qt", # Install and manage Proton-GE and Luxtorpeda for Steam and Wine-GE
   "spek", # Audio file spectrogram analysis
   "sticky-notes", # Simple sticky notes app
   # "stremio", # Media streaming platform
-  # "wine", # Compatibility layer capable of running Windows applications
-  # "winetricks", # Wine prefix settings manager
 ]
 
 [icedos.users.work]
 description = "Work"
 extraPackages = [
-  # "beekeeper-studio", # SQL client
   # "code-cursor", # AI-powered code editor built on vscode
   "slack", # Desktop client for Slack
   "watchman", # Watches files and takes action when they change

@@ -7,7 +7,7 @@
       follows = "chaotic/home-manager";
     };
     "icedos-github:icedos/apps" = {
-      url = "github:icedos/apps/200f20d957388108abe8b67d59ecc60a8521d27e";
+      url = "github:icedos/apps/94c8c300c5de0532be74752b527141d191f2a0d8";
     };
     "icedos-github:icedos/apps-aagl-aagl" = {
       inputs = {
@@ -22,7 +22,7 @@
       url = "path:///nix/store/5zcj323fgw0vxx0nhgvp45yxrwikm0c6-FSR.glsl";
     };
     "icedos-github:icedos/cosmic" = {
-      url = "github:icedos/cosmic/14f3c3ad4b3cba3dac565de38c9b0258c1d8d080";
+      url = "github:icedos/cosmic/1a057384a03a3cf98beb9b1866095f324cd8076c";
     };
     "icedos-github:icedos/cosmic-default-cosmic-manager" = {
       inputs = {

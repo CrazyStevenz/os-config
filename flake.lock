@@ -97,17 +97,17 @@
     },
     "icedos-github:icedos/apps": {
       "locked": {
-        "lastModified": 1763482813,
-        "narHash": "sha256-4A13JV3vvhNBPbGsJt3/UETK7JS90Ira5+T3RPbVWvs=",
+        "lastModified": 1763662923,
+        "narHash": "sha256-3pU6ap5IGPHoaE+g2ZoAIrBreyzNe0QVY5h+PlVwNq4=",
         "owner": "icedos",
         "repo": "apps",
-        "rev": "200f20d957388108abe8b67d59ecc60a8521d27e",
+        "rev": "94c8c300c5de0532be74752b527141d191f2a0d8",
         "type": "github"
       },
       "original": {
         "owner": "icedos",
         "repo": "apps",
-        "rev": "200f20d957388108abe8b67d59ecc60a8521d27e",
+        "rev": "94c8c300c5de0532be74752b527141d191f2a0d8",
         "type": "github"
       }
     },
@@ -148,17 +148,17 @@
     },
     "icedos-github:icedos/cosmic": {
       "locked": {
-        "lastModified": 1763573878,
-        "narHash": "sha256-fJGrVcKCChNFH5dPajUOnHyWNzt+eZWmpU2fARCOOyk=",
+        "lastModified": 1763597493,
+        "narHash": "sha256-JLyZnPsq/UDYY42994CUkJM35FWfJ4hFNeXKcMmtJBQ=",
         "owner": "icedos",
         "repo": "cosmic",
-        "rev": "14f3c3ad4b3cba3dac565de38c9b0258c1d8d080",
+        "rev": "1a057384a03a3cf98beb9b1866095f324cd8076c",
         "type": "github"
       },
       "original": {
         "owner": "icedos",
         "repo": "cosmic",
-        "rev": "14f3c3ad4b3cba3dac565de38c9b0258c1d8d080",
+        "rev": "1a057384a03a3cf98beb9b1866095f324cd8076c",
         "type": "github"
       }
     },
