@@ -1,24 +1,5 @@
 # [[icedos.repositories]]
 # url = "github:icedos/cosmic"
-# modules = [
-#   "appearance",
-#   "clipboard-manager",
-#   "cosmic-files",
-#   "cosmic-screenshot",
-#   "dock",
-#   "emoji-selector",
-#   "input",
-#   "magnifier",
-#   "mono-sound",
-#   "panel",
-#   "power",
-#   "sound",
-#   "startup",
-#   "time",
-#   "window-management",
-#   "workspaces",
-#   "x11",
-# ]
 
 # [icedos.desktop.cosmic.users.stef]
 # startupScript = "steam & signal-desktop"
@@ -33,7 +14,7 @@
 # size = "S" # XS, S, M, L, XL
 
 # [icedos.desktop.cosmic.panel.plugins]
-# left = ["com.system76.CosmicAppletPower", "com.system76.CosmicAppList"]
+# left = ["com.system76.CosmicAppList"]
 # center = []
 # right = [
 #   "com.system76.CosmicAppletStatusArea",
@@ -44,6 +25,7 @@
 #   "com.system76.CosmicAppletNetwork",
 #   "com.system76.CosmicAppletNotifications",
 #   "com.system76.CosmicAppletTime",
+#   "com.system76.CosmicAppletPower",
 # ]
 
 # [icedos.desktop.cosmic.input.keyboard]
