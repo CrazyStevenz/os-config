@@ -39,27 +39,6 @@
         "type": "github"
       }
     },
-    "flake-parts": {
-      "inputs": {
-        "nixpkgs-lib": [
-          "icedos-github:icedos/cosmic-default-cosmic-manager",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1759362264,
-        "narHash": "sha256-wfG0S7pltlYyZTM+qqlhJ7GMw2fTF4mLKCIVhLii/4M=",
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "rev": "758cf7296bee11f1706a574c77d072b8a7baa881",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "type": "github"
-      }
-    },
     "flake-schemas": {
       "locked": {
         "lastModified": 1721999734,
@@ -144,46 +123,6 @@
       "original": {
         "path": "/nix/store/5zcj323fgw0vxx0nhgvp45yxrwikm0c6-FSR.glsl",
         "type": "path"
-      }
-    },
-    "icedos-github:icedos/cosmic": {
-      "locked": {
-        "lastModified": 1763597493,
-        "narHash": "sha256-JLyZnPsq/UDYY42994CUkJM35FWfJ4hFNeXKcMmtJBQ=",
-        "owner": "icedos",
-        "repo": "cosmic",
-        "rev": "1a057384a03a3cf98beb9b1866095f324cd8076c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "icedos",
-        "repo": "cosmic",
-        "rev": "1a057384a03a3cf98beb9b1866095f324cd8076c",
-        "type": "github"
-      }
-    },
-    "icedos-github:icedos/cosmic-default-cosmic-manager": {
-      "inputs": {
-        "flake-parts": "flake-parts",
-        "home-manager": [
-          "home-manager"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1762776565,
-        "narHash": "sha256-Trd4uVhg9OggkxBMn3qUv74z9rNZE/s7iT7llTYQ0ZU=",
-        "owner": "HeitorAugustoLN",
-        "repo": "cosmic-manager",
-        "rev": "f26cdfef90b8db37db913f7c72a609c997700e59",
-        "type": "github"
-      },
-      "original": {
-        "owner": "HeitorAugustoLN",
-        "repo": "cosmic-manager",
-        "type": "github"
       }
     },
     "icedos-github:icedos/desktop": {
@@ -369,8 +308,6 @@
         "icedos-github:icedos/apps": "icedos-github:icedos/apps",
         "icedos-github:icedos/apps-aagl-aagl": "icedos-github:icedos/apps-aagl-aagl",
         "icedos-github:icedos/apps-celluloid-celluloid-shader": "icedos-github:icedos/apps-celluloid-celluloid-shader",
-        "icedos-github:icedos/cosmic": "icedos-github:icedos/cosmic",
-        "icedos-github:icedos/cosmic-default-cosmic-manager": "icedos-github:icedos/cosmic-default-cosmic-manager",
         "icedos-github:icedos/desktop": "icedos-github:icedos/desktop",
         "icedos-github:icedos/gnome": "icedos-github:icedos/gnome",
         "icedos-github:icedos/hardware": "icedos-github:icedos/hardware",

@@ -21,20 +21,6 @@
       flake = false;
       url = "path:///nix/store/5zcj323fgw0vxx0nhgvp45yxrwikm0c6-FSR.glsl";
     };
-    "icedos-github:icedos/cosmic" = {
-      url = "github:icedos/cosmic/1a057384a03a3cf98beb9b1866095f324cd8076c";
-    };
-    "icedos-github:icedos/cosmic-default-cosmic-manager" = {
-      inputs = {
-        home-manager = {
-          follows = "home-manager";
-        };
-        nixpkgs = {
-          follows = "nixpkgs";
-        };
-      };
-      url = "github:HeitorAugustoLN/cosmic-manager";
-    };
     "icedos-github:icedos/desktop" = {
       url = "github:icedos/desktop/79ecc3ae5905212e66570ee98b718fe290f9923c";
     };
