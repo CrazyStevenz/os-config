@@ -87,68 +87,34 @@ modules = [
   "btop",
   "celluloid",
   "codium",
-  "direnv",
   # "faugus-launcher",
   "gamemode",
   "gamescope",
-  "git",
-  "kitty",
   "lact",
   "librewolf",
   "lsfg-vk",
   "mangohud",
+  "me3",
   "nautilus",
   "ncdu",
-  "nh",
-  "nix-health",
-  "nix",
-  "nixfmt",
   "podman",
   "proton-launch",
   "scx",
   "solaar",
-  "ssh",
   "steam",
-  "toolset",
   "walker",
   "wg-quick",
   "zenergy",
   "zenstates",
-  "zsh",
 ]
-
-[icedos.applications.scx]
-extraArgs = ["--performance"]
 
 [[icedos.repositories]]
 url = "github:icedos/desktop"
-modules = ["adwaita-qt", "clear-xdg-portals", "displays", "gdm"]
-
-[[icedos.repositories]]
-url = "github:icedos/hardware"
-modules = [
-  "bluetooth",
-  "disable-ipv6",
-  "graphics",
-  "kernel",
-  "monitors",
-  "mounts",
-  "pipewire",
-  "radeon",
-  "ryzen",
-  "systemd-boot",
-  "uinput",
-  "upower",
-  "zram",
-]
+modules = ["gdm"]
 
 [[icedos.repositories]]
 name = "gnome"
 url = "github:icedos/gnome"
-
-[[icedos.repositories]]
-url = "github:icedos/tweaks"
-modules = ["gaming", "kernel"]
 
 [[icedos.repositories]]
 url = "github:icedos/users"
@@ -200,8 +166,12 @@ fpsLimit = "165,144,120,90,60,30,0"
 days = 7 # Number of days before a generation can be deleted
 generations = 5 # Number of generations that will always be kept
 
+[icedos.applications.scx]
+extraArgs = ["--performance"]
+
 [icedos.applications.steam]
 beta = true
+cpuUsageWorkaround = true
 downloadsWorkaround = true
 
 [icedos.applications.wg-quick]
@@ -276,8 +246,29 @@ seconds = 270
 [icedos.desktop.users.work.idle.suspend]
 enable = false
 
+[[icedos.repositories]]
+url = "github:icedos/hardware"
+modules = [
+  "bluetooth",
+  "disable-ipv6",
+  "graphics",
+  "kernel",
+  "monitors",
+  "mounts",
+  "pipewire",
+  "radeon",
+  "ryzen",
+  "systemd-boot",
+  "uinput",
+  "upower",
+  "zram",
+]
+
 [icedos.hardware.bootloaders.systemd-boot]
 mountPoint = "/boot"
+
+# [icedos.hardware.graphics.radeon]
+# featureMask = "0xffffffff"
 
 [icedos.hardware.kernel]
 version = "latest"
@@ -324,9 +315,9 @@ resolution = "1920x1080"
 refreshRate = 60
 position = "3440x360"
 
-[icedos.system]
-generations = 30
-version = "23.05"
+[[icedos.repositories]]
+url = "github:icedos/tweaks"
+modules = ["gaming", "kernel"]
 
 [icedos.users.stef]
 description = "Stefanos"
@@ -365,3 +356,7 @@ extraPackages = [
   "watchman", # Watches files and takes action when they change
   "windsurf", # Agentic IDE powered by AI Flow paradigm
 ]
+
+[icedos.system]
+generations = 30
+version = "23.05"

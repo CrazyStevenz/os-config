@@ -9,11 +9,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1763563060,
-        "narHash": "sha256-WoNrCTrsiONytvw31fvaRzwc9RcqqHv/LUyYyYflgIg=",
+        "lastModified": 1763732117,
+        "narHash": "sha256-/zBu6slgHtkuFZFJ4ReKS3NO6rdwEv4KcaYADkz6KyA=",
         "owner": "chaotic-cx",
         "repo": "nyx",
-        "rev": "c5bfa8ed2037abd4ca213b363065cb6f76155035",
+        "rev": "a34640558e83eb3ba0d52c52cb5ffd0465786e4b",
         "type": "github"
       },
       "original": {
@@ -76,17 +76,17 @@
     },
     "icedos-github:icedos/apps": {
       "locked": {
-        "lastModified": 1763662923,
-        "narHash": "sha256-3pU6ap5IGPHoaE+g2ZoAIrBreyzNe0QVY5h+PlVwNq4=",
+        "lastModified": 1763908692,
+        "narHash": "sha256-FMUoPDDVaXa6+aMtSajr//CnXzBXsQoM0J0pY8uxmDk=",
         "owner": "icedos",
         "repo": "apps",
-        "rev": "94c8c300c5de0532be74752b527141d191f2a0d8",
+        "rev": "768b1fa7ece80cad011b33d74c692bd2c76540dc",
         "type": "github"
       },
       "original": {
         "owner": "icedos",
         "repo": "apps",
-        "rev": "94c8c300c5de0532be74752b527141d191f2a0d8",
+        "rev": "768b1fa7ece80cad011b33d74c692bd2c76540dc",
         "type": "github"
       }
     },
@@ -127,65 +127,65 @@
     },
     "icedos-github:icedos/desktop": {
       "locked": {
-        "lastModified": 1763345685,
-        "narHash": "sha256-2YIt3UaH6StUPAfdh/sRuQzAix4m+YvNmpnLv7ttAL8=",
+        "lastModified": 1763906491,
+        "narHash": "sha256-gHxkvW42ZjFaN97c75g+T9cpJvkF5/ehN28JZSric1c=",
         "owner": "icedos",
         "repo": "desktop",
-        "rev": "79ecc3ae5905212e66570ee98b718fe290f9923c",
+        "rev": "2eda900d2b2732d686825842a5cf64a0211e9217",
         "type": "github"
       },
       "original": {
         "owner": "icedos",
         "repo": "desktop",
-        "rev": "79ecc3ae5905212e66570ee98b718fe290f9923c",
+        "rev": "2eda900d2b2732d686825842a5cf64a0211e9217",
         "type": "github"
       }
     },
     "icedos-github:icedos/gnome": {
       "locked": {
-        "lastModified": 1759536539,
-        "narHash": "sha256-RivxQdT9YMh+a+IdUcOXCD/RNXxDak/ij6jsN6ghZnM=",
+        "lastModified": 1763871201,
+        "narHash": "sha256-XFDAADV2VnXqBwGss+A9d6j88fsKVgvmgLu3YtOOmRw=",
         "owner": "icedos",
         "repo": "gnome",
-        "rev": "16a6fc3084ea50e611bcef13a01a885fbb19016d",
+        "rev": "39f13b18573bec1ecdca5b27b172b64d87b5abc0",
         "type": "github"
       },
       "original": {
         "owner": "icedos",
         "repo": "gnome",
-        "rev": "16a6fc3084ea50e611bcef13a01a885fbb19016d",
+        "rev": "39f13b18573bec1ecdca5b27b172b64d87b5abc0",
         "type": "github"
       }
     },
     "icedos-github:icedos/hardware": {
       "locked": {
-        "lastModified": 1763379318,
-        "narHash": "sha256-kjQYr2oJmGkdcdmRUKREE6XMF5nMKMqlxr0bOGEvrx4=",
+        "lastModified": 1763871378,
+        "narHash": "sha256-1yhCXAxv5U+bqATRWOnS98wDAOBD+W92He00zGF9C0A=",
         "owner": "icedos",
         "repo": "hardware",
-        "rev": "fbedf40b954c3658e5f4f827e9c6e46e9e5261c2",
+        "rev": "3ed0f39dcefe9afb734e9d8ed9d9d8bd97f5de5d",
         "type": "github"
       },
       "original": {
         "owner": "icedos",
         "repo": "hardware",
-        "rev": "fbedf40b954c3658e5f4f827e9c6e46e9e5261c2",
+        "rev": "3ed0f39dcefe9afb734e9d8ed9d9d8bd97f5de5d",
         "type": "github"
       }
     },
     "icedos-github:icedos/providers": {
       "locked": {
-        "lastModified": 1755401541,
-        "narHash": "sha256-FMEi0m8FxmLllBn2CtLqwqmYsgryaiGwPsuZxFw7sIE=",
+        "lastModified": 1763871570,
+        "narHash": "sha256-tpFGVAz/aMProC+IR736GZFuUJli4cp2RUrK0bpt4ZU=",
         "owner": "icedos",
         "repo": "providers",
-        "rev": "1273fe1a4086fbe2a84436ca1acb350a0020a410",
+        "rev": "c8c06c007923371a6baedcabe55cb1b209f0f04b",
         "type": "github"
       },
       "original": {
         "owner": "icedos",
         "repo": "providers",
-        "rev": "1273fe1a4086fbe2a84436ca1acb350a0020a410",
+        "rev": "c8c06c007923371a6baedcabe55cb1b209f0f04b",
         "type": "github"
       }
     },

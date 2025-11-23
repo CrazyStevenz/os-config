@@ -7,7 +7,7 @@
       follows = "chaotic/home-manager";
     };
     "icedos-github:icedos/apps" = {
-      url = "github:icedos/apps/94c8c300c5de0532be74752b527141d191f2a0d8";
+      url = "github:icedos/apps/768b1fa7ece80cad011b33d74c692bd2c76540dc";
     };
     "icedos-github:icedos/apps-aagl-aagl" = {
       inputs = {
@@ -22,16 +22,16 @@
       url = "path:///nix/store/5zcj323fgw0vxx0nhgvp45yxrwikm0c6-FSR.glsl";
     };
     "icedos-github:icedos/desktop" = {
-      url = "github:icedos/desktop/79ecc3ae5905212e66570ee98b718fe290f9923c";
+      url = "github:icedos/desktop/2eda900d2b2732d686825842a5cf64a0211e9217";
     };
     "icedos-github:icedos/gnome" = {
-      url = "github:icedos/gnome/16a6fc3084ea50e611bcef13a01a885fbb19016d";
+      url = "github:icedos/gnome/39f13b18573bec1ecdca5b27b172b64d87b5abc0";
     };
     "icedos-github:icedos/hardware" = {
-      url = "github:icedos/hardware/fbedf40b954c3658e5f4f827e9c6e46e9e5261c2";
+      url = "github:icedos/hardware/3ed0f39dcefe9afb734e9d8ed9d9d8bd97f5de5d";
     };
     "icedos-github:icedos/providers" = {
-      url = "github:icedos/providers/1273fe1a4086fbe2a84436ca1acb350a0020a410";
+      url = "github:icedos/providers/c8c06c007923371a6baedcabe55cb1b209f0f04b";
     };
     "icedos-github:icedos/tweaks" = {
       url = "github:icedos/tweaks/83d42744d78c418a259b8e1c4ae7eba1d3e9eaf5";
@@ -61,21 +61,13 @@
       inherit (builtins) fromTOML;
       inherit ((fromTOML (fileContents ./config.toml))) icedos;
 
-      icedosLib = import ./lib.nix {
+      icedosLib = import ./lib {
         inherit lib pkgs inputs;
         config = icedos;
         self = ./.;
       };
 
-      inherit (icedosLib) getExternalModuleOutputs;
-
-      externalModulesOutputs = map getExternalModuleOutputs icedos.repositories;
-
-      extraOptions = flatten (map (mod: mod.options) externalModulesOutputs);
-
-      extraNixosModules = flatten (
-        map (mod: mod.nixosModules { inherit inputs; }) externalModulesOutputs
-      );
+      inherit (icedosLib) modulesFromConfig;
     in
     {
       apps.${system}.init = {
@@ -98,7 +90,7 @@
             {
               options.icedos.configurationLocation = mkOption {
                 type = types.str;
-                default = "/home/stef/code/os/os-config";
+                default = "/home/stef/code/os/os-core";
               };
             }
           )
@@ -106,7 +98,7 @@
           # Symlink configuration state on "/run/current-system/source"
           {
             # Source: https://github.com/NixOS/nixpkgs/blob/5e4fbfb6b3de1aa2872b76d49fafc942626e2add/nixos/modules/system/activation/top-level.nix#L191
-            system.extraSystemBuilderCmds = "ln -s ${self} $out/source";
+            system.systemBuilderCommands = "ln -s ${self} $out/source";
           }
 
           # Internal modules and config
@@ -125,7 +117,7 @@
                 );
             in
             {
-              imports = [ ./options.nix ] ++ getModules ./.extra ++ getModules ./.private;
+              imports = [ ./modules/options.nix ] ++ getModules ./.extra ++ getModules ./.private;
               config.system.stateVersion = "23.05";
             }
           )
@@ -192,8 +184,8 @@
           )
 
         ]
-        ++ extraOptions
-        ++ extraNixosModules;
+        ++ modulesFromConfig.options
+        ++ (modulesFromConfig.nixosModules { inherit inputs; });
       };
     };
 }
