@@ -69,7 +69,6 @@ modules = [
   "btop",
   "celluloid",
   "codium",
-  # "faugus-launcher",
   "gamemode",
   "gamescope",
   "lact",
@@ -84,11 +83,19 @@ modules = [
   "scx",
   "solaar",
   "steam",
+  "steam-session",
   "walker",
   "wg-quick",
   "zenergy",
   "zenstates",
 ]
+
+# [icedos.applications.steam.session]
+# args = ["--hdr-enabled", "-W 3440", "-H 1440", "--output DP-1"]
+# steamArgs = []
+
+# [icedos.applications.steam.session.env]
+# DXVK_HDR = "1"
 
 [[icedos.repositories]]
 url = "github:icedos/desktop"
@@ -317,6 +324,7 @@ extraPackages = [
   "bottles", # Wine manager
   # "curtail", # Image compressor
   "eartag", # Simple music tag editor
+  # "faugus-launcher",
   "flac", # Library and tools for encoding and decoding the FLAC lossless audio file format
   "fragments", # BitTorrent client
   # "ghex", # HEX Editor
@@ -342,3 +350,7 @@ extraPackages = [
 [icedos.system]
 generations = 30
 version = "23.05"
+
+# [[icedos.system.channels]]
+# name = "small"
+# url = "github:nixos/nixpkgs/nixos-unstable-small"
